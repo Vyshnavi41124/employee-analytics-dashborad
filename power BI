@@ -1,0 +1,33 @@
+# import clean SQL Table
+
+HOME -> GET DATA -> SQL SERVER 
+
+LOAD TABLE: Employee_Master
+
+# Applied Power Query Transformations
+
+# Removed Unnecessary Columns
+
+Home → Choose Columns → (Selected required fields only)
+
+# Removed Empty or Null Rows
+
+Home → Remove Rows → Remove Blank Rows  
+
+Transform → Remove Rows → Remove Errors
+
+# loaded into Power BI Data Model
+
+Home → Close & Apply
+
+# DAX Measures Applied After Power Query
+
+Total Employees = COUNT(EmployeeMaster_clean[EmployeeID])
+
+Total Salary = SUM(EmployeeMaster_clean[Salary])
+
+Total Experience = SUM(EmployeeMaster_clean[Experience])
+
+Avg Performance Rating = AVERAGE(EmployeeMaster_clean[PerformanceRating])
+
+Total Salary (K) = DIVIDE([Total Salary], 1000)
